@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动态绑定css样式</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<style>
+    .red{
+        color: red;
+    }
+    .changeColor{
+        color: red;
+    }
+</style>
+<body>
+    <div id="vue-app">
+        <h1 v-bind:class="{red: true}">动态CSS</h1>
+        <h1 v-bind:class="{red: false}">动态CSS</h1>
+        <h1 v-on:click="{changeColor = ! changeColor}" v-bind:class="{changeColor: changeColor}">动态改变</h1>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-if</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<style>
+
+</style>
+<body>
+    <div id="vue-app">
+        <h1> v-if条件 </h1>
+        <button v-on:click="error = !error">Toggle Error</button>
+        <button v-on:click="success = !success">Toggle Success</button>
+
+        <!-- <p v-if="error">网络连接错误: 404</p>
+        <p v-else-if="success">网络连接成功: 200</p> -->
+
+        <!-- display: none; -->
+        <p v-show="error">网络连接错误: 404</p>
+        <p v-show="success">网络连接成功: 200</p> 
+
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

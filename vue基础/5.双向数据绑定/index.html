@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双向数据绑定</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="vue-app">
+        <h1>{{name}}</h1>
+        <button v-on:click="age++">涨一岁</button>
+        <button v-on:click="age--">减一岁</button>
+        <button v-on:click="age10()">涨十岁</button>
+        <p>my age is {{age}}</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

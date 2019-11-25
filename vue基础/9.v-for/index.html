@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-for</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<style>
+
+</style>
+<body>
+    <div id="vue-app">
+        <h1>v-if</h1>
+        <!-- 数组下标获取 -->
+        {{characters[1]}}
+        <!-- 数组遍历 -->
+        <ul>
+            <li v-for="characters in characters">{{characters}}</li>
+        </ul>
+        <!--  -->
+        <ul>
+            <li v-for="(user, index) in user">
+                {{user.age}} | {{user.name}} | {{index}}
+            </li>
+        </ul>
+        <!--  template -->
+        <div>
+            <template v-for="(user, index) in user">
+                <h3>{{user.age}}</h3>
+                <div v-for="(val,key) in user">  
+                    <p>{{key}} - {{val}}</p>
+                </div>
+            </template>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

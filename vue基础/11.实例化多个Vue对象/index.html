@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>实例化多个VUE对象</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<style>
+
+</style>
+<body>
+    <h1>初始化多个Vue实例对象</h1>
+    <div id="vue-one-app">
+        <h1>{{title}}</h1>
+        <p>{{greet}}</p>
+    </div>
+    <div id="vue-two-app">
+        <h1>{{title}}</h1>
+        <p>{{greet}}</p>
+        <button v-on:click="changeTitle">changeTitle</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
