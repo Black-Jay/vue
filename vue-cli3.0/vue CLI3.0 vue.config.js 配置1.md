@@ -4,16 +4,15 @@ vue CLI3.0 vue.config.js 配置1
 [原文链接](https://juejin.im/post/5bd02f98e51d457a944b634f)
 
 ```js
-/**
- * *@2018-10-08
- * *@author trsoliu 
- * *@describe vue-cli 3.x配置文件
- */
 const path = require('path');
-const vConsolePlugin = require('vconsole-webpack-plugin'); // 引入 移动端模拟开发者工具 插件 （另：https://github.com/liriliri/eruda）
-const CompressionPlugin = require('compression-webpack-plugin'); //Gzip
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; //Webpack包文件分析器
-const baseUrl = process.env.NODE_ENV === "production" ? "/static/" : "/"; //font scss资源路径 不同环境切换控制
+// 引入 移动端模拟开发者工具 插件 （另：https://github.com/liriliri/eruda）
+const vConsolePlugin = require('vconsole-webpack-plugin');
+//Gzip
+const CompressionPlugin = require('compression-webpack-plugin'); 
+//Webpack包文件分析器
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; 
+//font scss资源路径 不同环境切换控制
+const baseUrl = process.env.NODE_ENV === "production" ? "/static/" : "/";
 
 module.exports = {
 	//基本路径
@@ -29,12 +28,15 @@ module.exports = {
 	pages: undefined,
 	//是否使用包含运行时编译器的 Vue 构建版本
 	runtimeCompiler: false,
-	//是否为 Babel 或 TypeScript 使用 thread-loader。该选项在系统的 CPU 有多于一个内核时自动启用，仅作用于生产构建，在适当的时候开启几个子进程去并发的执行压缩
+	//是否为 Babel 或 TypeScript 使用 thread-loader。
+    //该选项在系统的 CPU 有多于一个内核时自动启用，仅作用于生产构建，在适当的时候开启几个子进程去并发的执行压缩
 	parallel: require('os').cpus().length > 1,
 	//生产环境是否生成 sourceMap 文件，一般情况不建议打开
 	productionSourceMap: false,
 	// webpack配置
-	//对内部的 webpack 配置进行更细粒度的修改 https://github.com/neutrinojs/webpack-chain see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
+	//对内部的 webpack 配置进行更细粒度的修改 
+    //https://github.com/neutrinojs/webpack-chain see 
+    //https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
 	chainWebpack: config => {
 		/**
 		 * 删除懒加载模块的prefetch，降低带宽压力
