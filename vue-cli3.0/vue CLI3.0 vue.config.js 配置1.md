@@ -17,7 +17,8 @@ const baseUrl = process.env.NODE_ENV === "production" ? "/static/" : "/";
 module.exports = {
 	//基本路径
 	//baseUrl: './',//vue-cli3.3以下版本使用
-        publicPath:'./',//vue-cli3.3+新版本使用
+    //vue-cli3.3+新版本使用
+    publicPath:'./',
 	//输出文件目录
 	outputDir: 'mcdonalds',
 	// eslint-loader 是否在保存的时候检查
